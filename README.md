@@ -4,5 +4,8 @@
 
 ![LaTeX](https://img.shields.io/badge/language-LaTeX-blue)
 ![Linear Algebra](https://img.shields.io/badge/topic-linear_algebra-brightgreen)
+![License](https://img.shields.io/github/license/yourusername/yourrepo)
+![Last Commit](https://img.shields.io/github/last-commit/yourusername/yourrepo)
+
 
 
