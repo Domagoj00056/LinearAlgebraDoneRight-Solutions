@@ -1,4 +1,4 @@
-# LinearAlgebraDoneRight-Solutions
+# Solutions to the Linear Algebra Done Right textbook
 
 ![Solutions_Done_Right](https://github.com/user-attachments/assets/5d8e76c8-44a9-4364-adf4-a322a0fcce99)
 
