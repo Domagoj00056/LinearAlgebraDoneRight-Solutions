@@ -7,6 +7,10 @@
 ![License](https://img.shields.io/github/license/SupremeLordGamer/latex-linear-algebra-solutions)
 ![Last Commit](https://img.shields.io/github/last-commit/SupremeLordGamer/latex-linear-algebra-solutions)
 
+## Where to find the book
+The author, Sheldon Axler, has generously made Linear Algebra Done Right available for free online at:
+https://linear.axler.net/
+
 ## License and Attribution
 This project contains solutions based on Linear Algebra Done Right by Sheldon Axler, which is licensed under the Creative Commons Attribution-NonCommercial (BY-NC) license.
 
