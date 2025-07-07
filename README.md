@@ -1,8 +1,7 @@
 # Solutions to the Linear Algebra Done Right textbook
 
+![Solutions_Done_Right (7)](https://github.com/user-attachments/assets/a664147e-a022-4625-8862-2d536b7deee9)
 
-
-![Solutions_Done_Right (1)](https://github.com/user-attachments/assets/e7bddd81-ccd5-4db8-ad69-1760e53b869d)
 
 
 ![LaTeX](https://img.shields.io/badge/language-LaTeX-blue)  ![Linear Algebra](https://img.shields.io/badge/topic-linear_algebra-brightgreen)  ![License](https://img.shields.io/github/license/SupremeLordGamer/latex-linear-algebra-solutions)  ![Last Commit](https://img.shields.io/github/last-commit/SupremeLordGamer/latex-linear-algebra-solutions)
