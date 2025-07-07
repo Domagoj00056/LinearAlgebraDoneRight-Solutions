@@ -34,8 +34,7 @@ https://linear.axler.net/
 
 This project contains solutions based on *Linear Algebra Done Right* by Sheldon Axler, which is licensed under the Creative Commons Attribution-NonCommercial (BY-NC) license.
 
-You can find the original book’s license here:  
-https://creativecommons.org/licenses/by-nc/4.0/
+You can find the original book’s license here: https://creativecommons.org/licenses/by-nc/4.0/
 
 These solutions are provided for non-commercial educational use only.
 
