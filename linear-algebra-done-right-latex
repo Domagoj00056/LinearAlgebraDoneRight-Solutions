@@ -1,0 +1,257 @@
+\documentclass{article}
+\title{Linear Algebra Done Right}
+\author{Domagoj Bagic}
+\date{June 2025}
+
+
+\setlength{\parindent}{0pt} % no paragraph indentation
+
+\usepackage{mathtools}
+\usepackage[skins]{tcolorbox}
+
+% Define your custom colors
+\definecolor{theorems}{RGB}{236,238,251}
+\definecolor{definitions}{RGB}{246,244,231}
+
+\tcbuselibrary{theorems}
+
+% Theorem box (your original style)
+\newtcolorbox[auto counter, number within=section]{theorembox}[2][]{
+  enhanced,
+  colback=theorems,
+  colframe=black,
+  boxrule=0.8pt,
+  sharp corners,
+  fonttitle=\normalfont,
+  coltitle=black,
+  attach boxed title to top left={
+    yshift=-2mm, xshift=4mm
+  },
+  boxed title style={
+    colback=theorems,
+    colframe=blue!50!black,
+    boxrule=0.8pt,
+    sharp corners,
+  },
+  title=Theorem~\thetcbcounter: #2,
+  #1
+}
+
+% Definition box (your original style)
+\newtcolorbox[auto counter, number within=section]{definitionbox}[2][]{
+  enhanced,
+  colback=definitions,
+  colframe=black,
+  boxrule=0.8pt,
+  sharp corners,
+  fonttitle=\normalfont,
+  coltitle=black,
+  attach boxed title to top left={
+    yshift=-2mm, xshift=4mm
+  },
+  boxed title style={
+    colback=definitions,
+    colframe=orange!70!black,
+    boxrule=0.8pt,
+    sharp corners,
+  },
+  title=Definition~\thetcbcounter: #2,
+  #1
+}
+
+% Question box — new style for your questions
+\newtcolorbox[auto counter, number within=section]{questionbox}[2][]{
+  enhanced,
+  colback=theorems, % same as theorem bg
+  colframe=black!60,
+  boxrule=0.8pt,
+  sharp corners,
+  fonttitle=\normalfont,
+  coltitle=black,
+  attach boxed title to top left={
+    yshift=-2mm, xshift=4mm
+  },
+  boxed title style={
+    colback=theorems,
+    colframe=blue!55!black, % a bit darker border
+    boxrule=1pt,
+    sharp corners,
+  },
+  title=Question~\thetcbcounter: #2,
+  #1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Style
+\setlength{\parindent}{0pt}
+
+    \usepackage{mathtools}
+    \usepackage{lipsum}
+    \usepackage[skins]{tcolorbox}
+    \definecolor{theorems}{RGB}{236,238,251}
+    \definecolor{definitions}{RGB}{246,244,231}
+    
+\usepackage{amsmath, amsthm}
+\usepackage{amssymb}
+\newtheorem{theorem}{Theorem}[section]       % Numbered within sections
+\newtheorem{lemma}[theorem]{Lemma}           % Shares counter with theorem
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{question}{Question}
+
+    
+\begin{document}
+
+       
+
+\maketitle
+
+\newpage
+\section{3A}
+
+
+\begin{questionbox}[title=Problem 7]{}
+Show that every linear map from a one-dimensional vector space to itself is multiplication by some scalar. More precisely, prove that if \( \dim V = 1 \) and \( T \in \mathcal{L}(V) \), then there exists \( \lambda \in \mathbb{F} \) such that \( Tv = \lambda v \text{ for all } v \in V.\)
+\end{questionbox}
+
+
+
+\begin{proof} Since $V$ is one dimensional, it has $1$ basis. Let $v_1$ be basis of $V$. Now, $\forall v\in V$ can be expressed as $v=\alpha v_1$ for some $\alpha \in \mathbb{F}$. \\
+
+Further, $T\in \mathcal{L}(V,V)$ and $V$ is vector space, so $T(v_1)\in V$. Hence, we can write $T(v_1)=\lambda v_1$. Now combining:
+
+\[
+T(v)=T(\alpha v_1)=\alpha T( v_1)=\alpha \lambda v_1 = \lambda v.
+\]
+
+Result follows as desired   
+\end{proof}
+
+\begin{questionbox}[title=Problem 8]{}
+Give an example of a function \( \varphi \colon \mathbb{R}^2 \to \mathbb{R} \) such that
+\[
+\varphi(av) = a\varphi(v)
+\]
+for all \( a \in \mathbb{R} \) and all \( v \in \mathbb{R}^2 \), but \( \varphi \) is not linear.
+\end{questionbox}
+
+\begin{proof}
+    For $v=(v_1,v_2)\in \mathbb{R}^2$, let  a function \( \varphi \colon \mathbb{R}^2 \to \mathbb{R} \) be defined as \[
+\varphi(v) =
+\begin{cases}
+\frac{{v_1}^2}{v_2} & \text{if } v_2 \neq 0, \\
+0   & \text{if } v_2 = 0.
+
+\end{cases}
+\]
+
+Now we check that $\varphi$ satisfies $\varphi(av) = a\varphi(v)$. Suppose $v_2\neq 0$:
+\[
+\varphi(\lambda v)=\varphi(\lambda v_1,\lambda v_2) = \frac{(\lambda v_1)^2}{\lambda v_2}= \lambda \frac{(v_1)^2}{v_2}=\lambda \varphi( v).
+\]
+When $v_2=0$, 
+\[
+\varphi(\lambda v)=\varphi(\lambda v_1,0)=0=\lambda 0= \lambda \varphi( v).
+\]
+To show that $\varphi$ is not linear map we need to show that it is not additive, i.e. $\varphi(u+v)\neq \varphi(v) + \varphi(u).$ Let $v=(1,1)$ and $u=(-1,1)$. Then
+\begin{align*}
+ &\varphi(v+u)=\varphi(1,1)+\varphi(-1,1)=\varphi(0,1) = 0.  \\
+ & \text{But} \quad  \varphi(v)+ \varphi(u)= \varphi(1,1)+\varphi(-1,1)=2.
+\end{align*}
+
+We conclude that $\varphi(u+v)\neq \varphi(v) + \varphi(u)$ hence $\varphi $ is not a linear map.
+\end{proof}
+
+\begin{questionbox}[title=Problem 9]{}
+Give an example of a function \( \varphi \colon \mathbb{C} \to \mathbb{C} \) such that
+\[
+\varphi(w + z) = \varphi(w) + \varphi(z)
+\]
+for all \( w, z \in \mathbb{C} \), but \( \varphi \) is not linear. (Here \( \mathbb{C} \) is considered as a complex vector space.)
+\end{questionbox}
+
+
+\begin{proof}
+    For $z=a+ib\in \mathbb{C}$, let a function \( \varphi \colon \mathbb{C} \to \mathbb{C} \) be defined as $ \varphi(z)= \operatorname{Re}(z)$. \\
+
+    Now we check that $\varphi$ satisfies $\varphi(w + z) = \varphi(w) + \varphi(z)$.
+    \[
+    \varphi(w + z)= \varphi((a_1+i b_1) + (a_2+i b_2))= \varphi((a_1+a_2)+i(b_1+ b_2))= a_1+a_2= \varphi(w) + \varphi(z).
+    \]
+    So see $\varphi$ is additive. Now we check if $\varphi$ is homogeneous. Let $\lambda=i$ and $z=1+i$.
+    \begin{align*}
+    &\varphi(\lambda z)=\varphi(i(1+i))=\varphi(-1+i)=-1 \\
+    &\text{But } \lambda \varphi(z)=i(\varphi(1+i))=i
+     \end{align*}
+We see that $ \varphi$ is not homogeneous, hence we conclude $\varphi$ is not a linear map.  
+\end{proof}
+
+\begin{questionbox}[title=Problem 10]{}
+Suppose \( U \) is a subspace of \( V \) with \( U \ne V \). Suppose \( S \in \mathcal{L}(U, W) \) and \( S \ne 0 \) (which means that \( Su \ne 0 \) for some \( u \in U \)). Define \( T \colon V \to W \) by
+\[
+Tv =
+\begin{cases}
+Sv & \text{if } v \in U, \\
+0  & \text{if } v \in V \text{ and } v \notin U.
+\end{cases}
+\]
+Prove that $T$ is not a linear map on $V$.
+\end{questionbox}
+\begin{proof}
+    Let $u \in V$ be such that $S(u)\neq0$ and let $v\in V$ be such that $v\notin U$. Then $u+v\notin U$ since otherwise
+    $v=(v+u)-u\in U$ which would give us a contradiction.\\
+
+    Having shown that we have $T(v+u)=0$ (by defn of $T$).\\
+
+    But $T(u)+T(v)=T(u)+0\neq 0$. Hence, $T(v+u)\neq T(u)+T(v)$ and we conclude $T$ is not a linear map.
+\end{proof}
+
+\begin{questionbox}[title=Problem 11]{}
+Let \( V \) be a finite-dimensional vector space, \( U \subseteq V \) a subspace, and \( S \in \mathcal{L}(U, W) \). Then there exists a linear map \( T \in \mathcal{L}(V, W) \) such that
+\[
+T(u) = S(u) \quad \text{for all } u \in U.
+\]
+\end{questionbox}
+\begin{proof}
+    Let ${u_1,...,u_n}$ be basis of $U$. We can extend this basis to the basis of $V$. That is ${u_1,...,u_n, v_1,...,v_m}$ is basis of $V$. \\
+    
+    Now we define $T:V\rightarrow W$ such that \(\sum_{i=1}^n a_i u_i + \sum_{i=1}^m b_i v_i \rightarrow \sum_{i=1}^n S(u_i)\). Clearly $T$ and $S$ agree on every $u\in U$. Now we need to show that $T$ is linear map.
+    \begin{align*}
+        T(\alpha u+\beta v) &= T(\alpha(\sum_{i=1}^n a_i u_i + \sum_{i=1}^m b_i v_i )+\beta(\sum_{i=1}^n c_i u_i + \sum_{i=1}^m d_i v_i)) \\
+        &=T(\sum_{i=1}^n ( \alpha a_i u_i + \beta c_i u_i) + \sum_{i=1}^m ( \alpha b_i v_i + \beta d_i v_i)) \\
+        &=S(\sum_{i=1}^n  \alpha a_i u_i + \beta c_i u_i)\\
+        &=S(\sum_{i=1}^n \alpha a_i u_i )+ S(\sum_{i=1}^n \beta c_i u_i) \\
+        &=\alpha S(\sum_{i=1}^n a_i u_i )+ \beta S(\sum_{i=1}^n c_i u_i) \\
+        &= \alpha T(u)+ \beta T(v).
+    \end{align*}
+
+We conclude $T$ is a linear map and result follows as desired.
+\end{proof}
+
+\newpage
+\section{3B}
+\begin{questionbox}[title=Problem 1]{}
+Give an example of a linear map $T$ with dim null $T$ = 3 and dim range $T$ = 2.
+\end{questionbox}
+
+\begin{proof}
+    Suppose $T\in \mathcal{L}(\mathbb{R}^5, \mathbb{R}^5)$ is defined by $T(x_1, \dots , x_5) = (x_1, 2 x_2, 0, 0, 0)$, then range of $T = \{(x_1, 2 x_2, 0, 0, 0): x_1, \dots , x_5 \in \mathbb{R}\}$. A basis of range $T$ is $(1,0,0,0,0), (0,2,0,0,0)$ hence dim range $T$ is $2$. By Fundamental Theorem of Linear Maps dim null $T$ = dim $\mathbb{R}^5$-dim range $T$= $5-2=3.$
+\end{proof}
+
+\begin{questionbox}[title=Problem 2]{}
+Suppose \( S, T \in \mathcal{L}(V) \) are such that $\text{range}(S) \subseteq \text{null}(T).$
+Prove that \( (ST)^2 = 0 \).
+\end{questionbox}
+
+\begin{proof}
+We rewrite $(ST)^2 = (ST)(ST) = S(TS)T$ which holds because of associativity of linear maps. But $S$ maps into the null space of $T$ hence $ST$ is a null mapping and since we are weorking with linear maps, we map zero to zero and result follows.
+
+Another way to go about it, $(ST)^2=S(T(S(T(x_1))))=S(T(S(x_2)))$ where $x_1,x_2$ are just some elements in $V$. Then $S$ maps into null space of $T$, then anything from nullspace of $T$ is being mapped to $0$ and lastly $S(0)=0$ as $S is linear map$
+\end{proof}
+
+\end{document}
