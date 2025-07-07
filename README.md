@@ -7,6 +7,9 @@
 ![License](https://img.shields.io/github/license/SupremeLordGamer/latex-linear-algebra-solutions)
 ![Last Commit](https://img.shields.io/github/last-commit/SupremeLordGamer/latex-linear-algebra-solutions)
 
+## Why Linear Algebra Done Right
+The book is excellently laid out, with clear definitions and elegant proofs. Its unique title comes from the author, Sheldon Axler, deliberately postponing the introduction of determinants until the very end of the textbook, which leads to more intuitive and insightful proofs. The exercises are challenging and help reinforce the learning experience.
+
 ## Where to find the book
 The author, Sheldon Axler, has generously made Linear Algebra Done Right available for free online at:
 https://linear.axler.net/
