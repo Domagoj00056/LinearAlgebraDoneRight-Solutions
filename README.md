@@ -25,8 +25,7 @@ The solutions presented are mainly for double-checking your work. If you find yo
 
 ## Where to find the book
 
-The author, Sheldon Axler, has generously made *Linear Algebra Done Right* available for free online at:  
-https://linear.axler.net/
+The author, Sheldon Axler, has generously made *Linear Algebra Done Right* available for free online at: https://linear.axler.net/
 
 <br>
 
