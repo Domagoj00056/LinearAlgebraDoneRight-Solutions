@@ -21,6 +21,8 @@ The book is excellently laid out, with clear definitions and elegant proofs. Its
 
 The solutions presented are mainly for double-checking your work. If you find yourself unable to solve a problem and decide to look up the solution here, try to wait at least 30 minutes before writing it down. This gives you time to understand the solution rather than just copying it. Hope this helps! :)
 
+If mistake is spotted or if there are any questions please reach out on: domnagojbagic01@outlook.com
+
 <br>
 
 ## Where to find the book
