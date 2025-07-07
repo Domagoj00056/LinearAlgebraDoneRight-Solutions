@@ -12,7 +12,8 @@
 
 The book is excellently laid out, with clear definitions and elegant proofs. Its unique title comes from the author, Sheldon Axler, deliberately postponing the introduction of determinants until the very end of the textbook, which leads to more intuitive and insightful proofs. The exercises are challenging and help reinforce the learning experience.
 
-[📄 View PDF](chapter-3/3A/Linear_Algebra_Done_Right_2.pdf)
+[📄 View PDF](chapter-3/3A/Linear_ALgebra_Done_Right%20%282%29.pdf)
+
 
 <br>
 ⚠️ **Disclaimer:** While I really like this book, it is an advanced read that covers abstract linear algebra typically taught in advanced undergraduate or graduate-level courses.
