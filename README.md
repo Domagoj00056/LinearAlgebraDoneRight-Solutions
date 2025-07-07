@@ -31,9 +31,9 @@ The author, Sheldon Axler, has generously made *Linear Algebra Done Right* avail
 
 ## License and Attribution
 
-This project contains solutions based on *Linear Algebra Done Right* by Sheldon Axler, which is licensed under the Creative Commons Attribution-NonCommercial (BY-NC) license.
+This project contains solutions based on *Linear Algebra Done Right* by Sheldon Axler, which is licensed under the Creative Commons Attribution-NonCommercial (BY-NC) license. These solutions are provided for non-commercial educational use only.
 
 You can find the original book’s license here: https://creativecommons.org/licenses/by-nc/4.0/
 
-These solutions are provided for non-commercial educational use only.
+
 
