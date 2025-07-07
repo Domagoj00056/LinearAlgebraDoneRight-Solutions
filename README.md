@@ -10,6 +10,9 @@
 ## Why Linear Algebra Done Right
 The book is excellently laid out, with clear definitions and elegant proofs. Its unique title comes from the author, Sheldon Axler, deliberately postponing the introduction of determinants until the very end of the textbook, which leads to more intuitive and insightful proofs. The exercises are challenging and help reinforce the learning experience.
 
+⚠️ Disclaimer:
+While I really like this book, it is an advanced read that covers abstract linear algebra typically taught in advanced undergraduate or graduate-level courses.
+
 ## How to use
 The solutions presented are mainly for double-checking your work. If you find yourself unable to solve a problem and decide to look up the solution here, try to wait at least 30 minutes before writing it down. This gives you time to understand the solution rather than just copying it. Hope this helps! :)
 
