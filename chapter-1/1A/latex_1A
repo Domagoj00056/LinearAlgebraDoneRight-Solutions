@@ -1,0 +1,328 @@
+\documentclass{article}
+\setlength{\parindent}{0pt} % no paragraph indentation
+\usepackage{amssymb}
+
+\usepackage{mathtools}
+\usepackage[skins]{tcolorbox}
+
+% Define your custom colors
+\definecolor{theorems}{RGB}{236,238,251}
+\definecolor{definitions}{RGB}{246,244,231}
+
+\tcbuselibrary{theorems}
+
+% Theorem box (your original style)
+\newtcolorbox[auto counter, number within=section]{theorembox}[2][]{
+  enhanced,
+  colback=theorems,
+  colframe=black,
+  boxrule=0.8pt,
+  sharp corners,
+  fonttitle=\normalfont,
+  coltitle=black,
+  attach boxed title to top left={
+    yshift=-2mm, xshift=4mm
+  },
+  boxed title style={
+    colback=theorems,
+    colframe=blue!50!black,
+    boxrule=0.8pt,
+    sharp corners,
+  },
+  title=Theorem~\thetcbcounter: #2,
+  #1
+}
+
+% Definition box (your original style)
+\newtcolorbox[auto counter, number within=section]{definitionbox}[2][]{
+  enhanced,
+  colback=definitions,
+  colframe=black,
+  boxrule=0.8pt,
+  sharp corners,
+  fonttitle=\normalfont,
+  coltitle=black,
+  attach boxed title to top left={
+    yshift=-2mm, xshift=4mm
+  },
+  boxed title style={
+    colback=definitions,
+    colframe=orange!70!black,
+    boxrule=0.8pt,
+    sharp corners,
+  },
+  title=Definition~\thetcbcounter: #2,
+  #1
+}
+
+% Question box — new style for your questions
+\newtcolorbox[auto counter, number within=section]{questionbox}[2][]{
+  enhanced,
+  colback=theorems, % same as theorem bg
+  colframe=black!60,
+  boxrule=0.8pt,
+  sharp corners,
+  fonttitle=\normalfont,
+  coltitle=black,
+  attach boxed title to top left={
+    yshift=-2mm, xshift=4mm
+  },
+  boxed title style={
+    colback=theorems,
+    colframe=blue!55!black, % a bit darker border
+    boxrule=1pt,
+    sharp corners,
+  },
+  title=Question~\thetcbcounter: #2,
+  #1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Style
+\setlength{\parindent}{0pt}
+
+    \usepackage{mathtools}
+    \usepackage{lipsum}
+    \usepackage[skins]{tcolorbox}
+    \definecolor{theorems}{RGB}{236,238,251}
+    \definecolor{definitions}{RGB}{246,244,231}
+    
+\usepackage{amsmath, amsthm}
+\usepackage{amssymb}
+\newtheorem{theorem}{Theorem}[section]       % Numbered within sections
+\newtheorem{lemma}[theorem]{Lemma}           % Shares counter with theorem
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{question}{Question}
+
+    
+\begin{document}
+\section*{1A $\mathbb{R}^n$ and $\mathbb{C}^n$}
+
+\begin{questionbox}[title=Problem 1]{}
+Show that \( \alpha + \beta = \beta + \alpha \) for all \( \alpha, \beta \in \mathbb{C} \).
+\end{questionbox}
+
+\begin{proof}
+Suppose $\alpha = a + b i$ and $\beta = c + d i \in \mathbb{C}$ where $a,b,c,d \in \mathbb{R}$. Then
+\[
+\alpha + \beta = a + b i + c + d i = c + d i + a + b i = \beta + \alpha \qedhere.
+\]
+\end{proof}
+
+\begin{questionbox}[title=Problem 2]{}
+Show that \( (\alpha + \beta) + \lambda = \alpha + (\beta + \lambda) \) for all \( \alpha, \beta, \lambda \in \mathbb{C} \).
+\end{questionbox}
+\begin{proof}
+Suppose $\alpha = a + b i$ and $\beta = c + d i$ and $\lambda = e + fi \in \mathbb{C}$ where $a,b,c,d,e,f \in \mathbb{R}$. Then
+\begin{align*}
+ (\alpha + \beta) + \lambda &= ( a + b i + c + d i) + e + fi  \\
+ &= a + b i + c + d i + e + fi \\
+ &= a + b i + (c + d i + e + fi) = \alpha + (\beta + \lambda).  \qedhere
+\end{align*}
+\end{proof}
+
+\begin{questionbox}[title=Problem 3]{}
+Show that \( (\alpha \beta) \lambda = \alpha (\beta \lambda) \) for all \( \alpha, \beta, \lambda \in \mathbb{C} \).
+\end{questionbox}
+\begin{proof}
+Suppose $\alpha = a + b i$ and $\beta = c + d i$ and $\lambda = e + fi \in \mathbb{C}$ where $a,b,c,d,e,f \in \mathbb{R}$. Then
+\begin{align*}
+ (\alpha \beta) \lambda &= \big( (a + b i )(c + d i) \big) (e + fi) \\  
+ &= (ac + adi + bci -bd)(e + fi) \\
+ &= ace + adei + bcei -bde + acfi -adf - bcf - bdfi \\
+ &= (a + b i )(ce+cfi+dei-df) \\
+ &= (a + b i )\big((c + d i) (e + fi) \big)\\
+ &= \alpha (\beta \lambda).  \qedhere
+\end{align*}
+\end{proof}
+
+\begin{questionbox}[title=Problem 4]{}
+Show that \( \lambda \left( \alpha + \beta \right) = \lambda \alpha + \lambda \beta \) for all \( \lambda, \alpha, \beta \in \mathbb{C} \).
+\end{questionbox}
+\begin{proof}
+Suppose $\alpha = a + b i$ and $\beta = c + d i \in \mathbb{C}$ and let  $a,b,c,d,\lambda \in \mathbb{R}$. Then
+\begin{align*}
+\lambda \left( \alpha + \beta \right) &= \lambda (a + b i +  c + d i ) \\
+&= \lambda a + \lambda b i +  \lambda c + \lambda d i \\
+&= \lambda ( a + b i) +  \lambda (c + d i) = \lambda \alpha + \lambda \beta \qedhere
+\end{align*}
+\end{proof}
+
+\begin{questionbox}[title=Problem 5]{}
+Show that for every \( \alpha \in \mathbb{C} \), there exists a unique \( \beta \in \mathbb{C} \) such that \( \alpha + \beta = 0 \).
+\end{questionbox}
+\begin{proof}
+To show the existence, we let $\alpha = a + b i\in \mathbb{C}$ where $a,b\in \mathbb{R}$. Now, define $\beta = c+ di\in \mathbb{C}$ such that $c=-a$ and $d=-b$. Then   
+\begin{align*}
+    \alpha + \beta =  a + b i +  -a -b i = 0
+\end{align*}
+To show uniqueness, we suppose there exists $\tilde{\beta} \neq \beta$ such that $\alpha + \tilde{\beta} = 0 $. But
+\[
+\tilde{\beta} = \tilde{\beta} + \alpha + \beta = \alpha + \tilde{\beta}+ \beta= \beta 
+\]
+gives us a contradiction. Result follows.
+\end{proof}
+
+\begin{questionbox}[title=Problem 6]{}
+Show that for every \( \alpha \in \mathbb{C} \) with \( \alpha \ne 0 \), there exists a unique \( \beta \in \mathbb{C} \) such that \( \alpha \beta = 1 \).
+\end{questionbox}
+\begin{proof}
+To show the existence, we let $\alpha = a + b i\neq 0 \in \mathbb{C}$ where $a,b\in \mathbb{R}$. Now, define $\beta = c+ di\in \mathbb{C}$ such that $c=\frac{a}{a^2 + b^2}$ and $d=\frac{b}{a^2 + b^2}$. Then  
+
+\[
+\alpha \beta = ( a + b i)(\frac{a}{a^2 + b^2}-\frac{b}{a^2 + b^2} i) = \frac{a^2}{a^2 + b^2}+ \frac{abi}{a^2 + b^2}- \frac{abi}{a^2 + b^2}+ \frac{b^2}{a^2 + b^2} = 1
+\]
+
+To show uniqueness, we suppose there exists $\tilde{\beta} \neq \beta$ such that $\alpha \tilde{\beta}=1.$ But
+\[
+\tilde{\beta} = \tilde{\beta} \alpha \beta = \alpha \tilde{\beta} \beta = \beta
+\]
+gives us a contradiction. Result follows.
+\end{proof}
+
+\begin{questionbox}[title=Problem 7]{}
+Show that \[ \dfrac{-1 + \sqrt{3}i}{2} \] is a cube root of 1 (meaning that its cube equals 1).
+\end{questionbox}
+\begin{proof}
+\begin{align*}
+    \Big(\dfrac{-1 + \sqrt{3}i}{2}\Big) \Big(\dfrac{-1 + \sqrt{3}i}{2}\Big) \Big(\dfrac{-1 + \sqrt{3}i}{2}\Big)
+    &=\Big(\dfrac{1 -\sqrt{3}i -\sqrt{3}i -3}{4}\Big) \Big(\dfrac{-1 + \sqrt{3}i}{2}\Big) \\
+    &= \Big(\dfrac{-2 -2\sqrt{3}i}{4}\Big) \Big(\dfrac{-1 + \sqrt{3}i}{2}\Big) \\
+    &= \Big(\frac{2 -2 \sqrt{3}i + 2 \sqrt{3}i +6}{8}\Big)=1 \qedhere
+\end{align*}
+\end{proof}
+
+\begin{questionbox}[title=Problem 8]{}
+Find two distinct square roots of \( i \).
+\end{questionbox}
+\begin{proof}
+Similarly to question 7, to show a number is square root we want to square it and get the desired outcome. Here we want to find $\alpha \neq \beta $ such that $\alpha^2=i$ and $\beta^2=i$ where $\alpha, \beta \in \mathbb{C}$.
+
+\begin{align*}
+    (a+bi)^2 = i 
+    &\implies (a^2-b^2) + 2abi =i \\ 
+    &\implies a=b \textnormal{  and  } 2ab=1 \\
+    &\implies a^2 = \frac{1}{2} \\
+    &\implies \alpha= \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}i \quad \textnormal{  and  } \quad \beta = - \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} i.
+    \qedhere
+\end{align*}
+\end{proof}
+
+\begin{questionbox}[title=Problem 9]{}
+Find \( x \in \mathbb{R}^4 \) such that  
+\[ (4,\ -3,\ 1,\ 7) + 2x = (5,\ 9,\ -6,\ 8). \]
+\end{questionbox}
+
+\begin{proof}
+    We get a system of following linear equations.
+
+\[
+\begin{cases}
+4 + 2x_1 = 5 \\
+-3 + 2x_2 = 9 \\
+1 + 2x_3 = -6 \\
+7 + 2x_4 = 8
+\end{cases}
+\quad
+\begin{aligned}
+&\implies \quad x_1 = \frac{1}{2},\quad x_2 = 6,\quad x_3 = -\frac{7}{2},\quad x_4 = \frac{1}{2} \\
+&\implies \quad x = \left(\frac{1}{2},\, 6,\, -\frac{7}{2},\, \frac{1}{2}\right) \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \qedhere
+\end{aligned}
+\]
+\end{proof}
+
+\begin{questionbox}[title=Problem 10]{}
+Explain why there does not exist \( \lambda \in \mathbb{C} \) such that  
+\[
+\lambda (2 - 3i, \; 5 + 4i, \; -6 + 7i) = (12 - 5i, \; 7 + 22i, \; -32 - 9i).
+\]
+\end{questionbox}
+
+\begin{proof}
+To show that such $ \lambda \in \mathbb{C}$ does not exist we will try to solve the following system of linear equations.
+\[
+\begin{cases}
+\lambda (2 - 3i) = 12 - 5i \implies \lambda = \dfrac{12 - 5i}{2 - 3i}\\
+\lambda (5 + 4i) = 7 + 22i  \\
+\lambda (-6 + 7i) = -32 - 9i \implies \lambda = \dfrac{-32 - 9i}{-6 + 7i}
+\end{cases}
+\]
+We see that $\lambda$ in first and third row do not match, that is,  we need a different scalar to get the desired outputs. Result follows.
+\end{proof}
+
+\begin{questionbox}[title=Problem 11]{}
+Show that \( (x + y) + z = x + (y + z) \) for all \( x, y, z \in \mathbb{F}^n \).
+\end{questionbox}
+\begin{proof}
+Let $x=(x_1,\dots,x_n)$ and $y=(y_1,\dots,y_n)$ and $z=(z_1,\dots,z_n)$ be $x,y,z\in \mathbb{F}^n$ where $x_i,y_i,z_i \in \mathbb{F}$ for every $i\in \{1,\dots,n\}$. Then
+\begin{align*}
+ (x + y) + z 
+ &= \Big((x_1,\dots,x_n)+(y_1,\dots,y_n)\Big) +(z_1,\dots,z_n)   \\
+ &=(x_1+ y_1,\dots,x_n+ y_n) +(z_1,\dots,z_n) \\
+ &=(x_1+ y_1+z_1,\dots,x_n+ y_n+z_n) \\
+&=(x_1,\dots,x_n)+\Big((y_1+z_1,\dots,y_n+z_n)\Big) \\
+&=(x_1,\dots,x_n)+\Big( (y_1,\dots,y_n) +(z_1,\dots,z_n)\Big)=  x + (y + z) \qedhere
+\end{align*}
+\end{proof}
+
+
+\begin{questionbox}[title=Problem 12]{}
+Show that \( (ab)x = a(bx) \) for all \( x \in \mathbb{F}^n \) and all \( a, b \in \mathbb{F} \).
+\end{questionbox}
+\begin{proof}
+Let $x=(x_1,\dots,x_n)\in \mathbb{F}^n$ where $x_i\in \mathbb{F}$ for every $i\in \{1,\dots,n\}$ and let $a,b\in \mathbb{F}$.
+Then
+\[
+(ab)x=ab(x_1,\dots,x_n) = (abx_1,\dots,abx_n)= a(bx_1,\dots,bx_n)=a(bx) \qedhere
+\]
+\end{proof}
+
+\begin{questionbox}[title=Problem 13]{}
+Show that \( 1x = x \) for all \( x \in \mathbb{F}^n \).
+\end{questionbox}
+\begin{proof}
+Let $x=(x_1,\dots,x_n)\in \mathbb{F}^n$ where $x_i\in \mathbb{F}$ for every $i\in \{1,\dots,n\}$ and let $1\in \mathbb{F}$.
+Then
+\[
+1x=1(x_1,\dots,x_n)=(1x_1,\dots,1x_n)=(x_1,\dots,x_n)=x
+\]
+\end{proof}
+
+\begin{questionbox}[title=Problem 14]{}
+Show that \( \lambda(x + y) = \lambda x + \lambda y \) for all \( \lambda \in \mathbb{F} \) and all \( x, y \in \mathbb{F}^n \).
+\end{questionbox}
+\begin{proof}
+Let $x=(x_1,\dots,x_n)$ and $y=(y_1,\dots,y_n)$ be $x,y\in \mathbb{F}^n$ where $x_i,y_i\in \mathbb{F}$ for every $i\in \{1,\dots,n\}$ and let $\lambda\in \mathbb{F}$.
+Then
+\begin{align*}
+ \lambda(x + y) &= \lambda\Big((x_1,\dots,x_n)+(y_1,\dots,y_n)\Big)\\
+ &= \lambda(x_1+y_1,\dots,x_n+y_n) \\
+ &= \Big(\lambda (x_1+y_1),\dots,\lambda (x_n+y_n)\Big)   \\
+ &=(\lambda x_1+\lambda y_1,\dots,\lambda x_n+\lambda y_n) \\
+&=(\lambda x_1,\dots,\lambda x_n)+ (\lambda y_1,\dots,\lambda y_n) \\
+&= \lambda(x_1,\dots,x_n)+\lambda(y_1,\dots,y_n)= \lambda x + \lambda y. \qedhere
+\end{align*}
+\end{proof}
+
+\begin{questionbox}[title=Problem 15]{}
+Show that \( (a + b)x = ax + bx \) for all \( a, b \in \mathbb{F} \) and all \( x \in \mathbb{F}^n \).
+\end{questionbox}
+\begin{proof}
+Let $x=(x_1,\dots,x_n)\in \mathbb{F}^n$ where $x_i\in \mathbb{F}$ for every $i\in \{1,\dots,n\}$ and let $a,b\in \mathbb{F}$.
+Then  
+\begin{align*}
+(a + b)x &= (a + b)(x_1,\dots,x_n) \\
+&= \Big((a+b)x_1,\dots,(a+b)x_n\Big) \\
+&= \Big(a x_1+ b x_1,\dots,ax_n + b x_n\Big) \\
+&= a(x_1,\dots,x_n)+b(x_1,\dots,x_n)= a x + b x. \qedhere
+\end{align*}
+\end{proof}
+
+
+\end{document}
